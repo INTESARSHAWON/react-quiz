@@ -1,9 +1,5 @@
 import * as React from "react";
-    import * as ReactDOM from "react-dom/client";
-    import {
-      createBrowserRouter,
-      RouterProvider,
-    } from "react-router-dom";
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import '../styles/App.css';
 import Layout from './Layout';
@@ -17,8 +13,36 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <div>Hello world!</div>,
-    },])
+      element: <Layout/>,
+      children: [ 
+        {
+          path: "/",
+          element: <Home/>,
+        },
+    
+        {
+          path: "/Signup",
+          element: <Signup/>,
+        },
+
+        {
+          path: "/Login",
+          element: <Login/>,
+        },
+
+        {
+          path: "/Quiz",
+          element: <Quiz/>,
+        },
+
+        {
+          path: "/Result",
+          element: <Result/>,
+        },
+
+      ]
+    },  
+  ])
   
     return (    
       <RouterProvider router={router}>

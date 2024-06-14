@@ -10,6 +10,7 @@ import Quiz from './pages/Quiz';
 import Result from './pages/Result';
 
 function App() {
+
   const router = createBrowserRouter([
     {
       path: "/",
